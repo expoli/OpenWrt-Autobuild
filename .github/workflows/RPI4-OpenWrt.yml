@@ -104,7 +104,7 @@ jobs:
         IGNORE_ERRORS=1 make -j$(($(nproc) + 1)) V=s
     - name: Cleaning
       run: |
-        cd openwrt/bin/targets/rockchip/armv8
+        cd openwrt/bin/targets/bcm27xx/bcm2711
         /bin/bash ../../../../../SCRIPTS/06_cleaning.sh
     - name: Print Disk Space After
       run: df -h
@@ -112,4 +112,4 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: RPI4-OpenWrt
-        path: openwrt/bin/targets/rockchip/armv8/
+        path: openwrt/bin/targets/bcm27xx/bcm2711/
